@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GOODZOO_SHOP</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="goodzoo">
+    <div class="container"></div>
+    <div class="top_img">
+        <a href="">
+            <h1 class="title">GOODZOO_SHOP</h1>
+        </a>
+
+        <section>
+            <h2>SWICH2用ソフト</h2>
+
+
+            <div class="game">
+                <img src="images/game_top.png" alt="">
+            </div>
+            <div class="sentence_g">
+                <p> キャラクターを操り技を繰り出せ！<br>
+                    最強のZOOキャラクターは誰だ？？<br>
+                    君の挑戦を待っている！！</p>
+
+            </div>
+    </div>
+
+    <div class="sentence_g2">
+        <p>キZOOだらけの女神たち <span>$50</span></p>
+    </div>
+    
+
+
+    <div class="m-navG">
+        <table>
+            <tr>
+                <td>
+                    <a href="index.html"><img src="images/Group 43.png" alt=""></a>
+
+                    <a href="contact.html"><img src="images/Group 3.png" alt=""></a>
+                </td>
+                <td>
+                    <a href="it's_new.html"><img src="images/Group 5 2.png" alt=""></a>
+
+                    <a href="member.html"><img src="images/marum.png" alt=""></a>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+
+    
+
+    <div class="slider">
+        <div class="slides">
+            <img src="images/game_grafic1.png" class="slide">
+            <img src="images/game_grafic2.png" class="slide">
+            <img src="images/game_grafic3.png" class="slide">
+
+        </div>
+        <button class="prev">‹</button>
+        <button class="next">›</button>
+        <div class="dots"></div>
+    </div>
+    
+
+    
+</section>
+    <!-- kokohaotamesi -->
+
+
+<section>
+    
+    <div class="product-container">
+        <div class="zoom-wrapper" id="zoom-container">
+            <img src="images/penga_removebg.png" alt="Main" id="main-image" style="width:100%; display:block;">
+        </div>
+
+        <div id="zoom-result"></div>
+
+        <div class="g-title">
+            <h2>GOODZOO コレクション<span>各$12</span></h2>
+        </div>
+
+
+        <div class="product-info">
+            <p>下のサムネイルをクリックすると、メイン画像が切り替わります。</p>
+        </div>
+    </div>
+    <div class="roope-container">
+        <div class="roope-scroll" id="thumb-list">
+            <div class="roope-inner">
+                <img src="images/hod1.png">
+                <img src="images/hold2.png">
+                <img src="images/hold3.png">
+                <img src="images/hold4.png">
+                <img src="images/hold5.png">
+                <img src="images/hold6.png">
+                <img src="images/hold7 (1).png">
+                <img src="images/hold8.png">
+            </div>
+            <div class="roope-inner">
+                <img src="images/hod1.png">
+                <img src="images/hold2.png">
+                <img src="images/hold3.png">
+                <img src="images/hold4.png">
+                <img src="images/hold5.png">
+                <img src="images/hold6.png">
+                <img src="images/hold7 (1).png">
+                <img src="images/hold8.png">
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <footer>
+        <div class="footerNav">
+            <div class="footermenu">
+                <ul>
+                    <li><a href="it's_new.html"> お知らせ</a></li>
+                    <li><a href="index.html">TOPPAGE</a></li>
+
+                </ul>
+                <ul>
+                    <li><a href="contact.html"> CONTACT</a></li>
+                    <li><a href="member.html">MEMBER</a></li>
+                </ul>
+                <div class="imgfooter">
+                    <img src="images/gorinlogo.png" alt="">
+                    <img src="images/gorinlogo.png" alt="">
+                    <img src="images/gorinlogo.png" alt="">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+
+
+</body>
+
+
+
+
+
+
+<script>
+
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const mainImg = document.getElementById('main-image');
+        const container = document.getElementById('zoom-container');
+        const result = document.getElementById('zoom-result');
+        const allThumbs = document.querySelectorAll('.roope-inner img');
+        const title = document.querySelector(".title");
+        const ft = document.querySelector("footer");
+
+        const slides = document.querySelector(".slides");
+        const slide = document.querySelectorAll(".slide");
+        const prev = document.querySelector(".prev");
+        const next = document.querySelector(".next");
+        const dotsContainer = document.querySelector(".dots");
+
+        if (mainImg && container && result) {
+            allThumbs.forEach(thumb => {
+                thumb.addEventListener('click', () => {
+                    mainImg.src = thumb.src;
+                    mainImg.style.opacity = 0;
+                    setTimeout(() => { mainImg.style.opacity = 1; }, 50);
+                });
+            });
+
+            container.addEventListener('mousemove', (e) => {
+                result.style.display = 'block';
+                const rect = container.getBoundingClientRect();
+                const xPercent = ((e.clientX - rect.left) / rect.width) * 100;
+                const yPercent = ((e.clientY - rect.top) / rect.height) * 100;
+                result.style.backgroundImage = `url('${mainImg.src}')`;
+                result.style.backgroundSize = `${rect.width * 3}px ${rect.height * 3}px`;
+                result.style.backgroundPosition = `${xPercent}% ${yPercent}%`;
+            });
+
+            container.addEventListener('mouseleave', () => {
+                result.style.display = 'none';
+            });
+        }
+
+        if (title) {
+            const text = title.textContent;
+            title.textContent = "";
+            text.split("").forEach((mozi, i) => {
+                const span = document.createElement("span");
+                span.textContent = mozi;
+                span.style.animationDelay = i * 0.2 + "s";
+                title.appendChild(span);
+            });
+        }
+
+        if (slides && slide.length > 0) {
+            let index = 0;
+            slide.forEach((_, i) => {
+                const dot = document.createElement("span");
+                dot.classList.add("dot");
+                if (i === 0) dot.classList.add("active");
+                dot.addEventListener("click", () => { index = i; updateSlider(); });
+                dotsContainer.appendChild(dot);
+            });
+            const dots = document.querySelectorAll(".dot");
+            function updateSlider() {
+                slides.style.transform = `translateX(-${index * 100}%)`;
+                dots.forEach((d, i) => d.classList.toggle("active", i === index));
+            }
+            if (next) next.addEventListener("click", () => { index = (index + 1) % slide.length; updateSlider(); });
+            if (prev) prev.addEventListener("click", () => { index = (index - 1 + slide.length) % slide.length; updateSlider(); });
+            setInterval(() => { index = (index + 1) % slide.length; updateSlider(); }, 4000);
+        }
+
+        window.addEventListener('scroll', () => {
+            if (ft) {
+                const isBottom = (window.scrollY + window.innerHeight) >= document.documentElement.scrollHeight - 100;
+                if (isBottom) {
+                    ft.classList.add("foot");
+                } else {
+                    ft.classList.remove("foot");
+                }
+            }
+        });
+    });
+
+
+
+
+
+
+
+
+</script>
+
+</html>
