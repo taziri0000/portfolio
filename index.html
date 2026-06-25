@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Yuki Nakaminami | Portfolio</title>
+    <style>
+        * { 
+        box-sizing: border-box; 
+        margin: 0; padding: 0; 
+        }
+
+        body { 
+        font-family:'Helvetica Neue', Arial, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 10vh;
+        }
+        
+        /* セクション共通 */
+        section {
+        margin-bottom: 80px;
+        }
+        h1 {
+        font-size: 3rem;
+        margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin-bottom: 20vh;
+            border-bottom: 3px solid #eee;
+            padding-bottom: 10px;
+        }  
+
+        /* プロフィール用グリッド */
+        .profile-grid {
+        display: grid;
+        grid-template-columns: 4fr 2fr;
+        gap: 40px;
+        }
+
+        .image-placeholder img{
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+        
+        /* 作品一覧用グリッド */
+        .work-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 30px;
+        }
+        
+        /* 各要素 */
+        .work-item {
+        border: 1px solid #f0f0f0;
+        padding: 20px;
+        }
+        .image-placeholder {
+        width: 100%;
+        height: 200px;
+        background: #f9f9f9;
+        margin-bottom: 20vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        }
+
+        .image-placeholder a:hover{
+            transition: 0.5s;
+            scale: 1.2;
+        }
+        
+        .skill-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        }
+        .skill-tag {
+        background: #eee;
+        padding: 5px 15px;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        }
+
+
+        @media screen and (max-width:800px) {
+
+        .profile-grid {
+        display: block;
+        }
+
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Yuki Nakaminami</h1>
+    <p>Web Designer & Developer</p>
+</header>
+
+<section id="profile">
+    <h2>Profile</h2>
+    <div class="profile-grid">
+        <div class="image-placeholder">
+            <img src="images/me.PNG" alt="">
+        </div>
+        <div>
+            <p>初めまして。
+            中南雄貴です。<br>
+        私の経歴は物流で事務を7年した後にECサイトでの運営事務を2年半した後、
+    職業訓練校に入学してWEBデザイナーを目指すこととなる。</p>
+        </div>
+    </div>
+</section>
+
+<section id="skills">
+    <h2>Skills</h2>
+    <div class="skill-list">
+        <span class="skill-tag">Web Design</span>
+        <span class="skill-tag">Video Editing</span>
+        <span class="skill-tag">Spreadsheet Automation</span>
+        <span class="skill-tag">Micro Soft Office Excell</span>
+        <span class="skill-tag">HTML/CSS</span>
+        <span class="skill-tag">java script</span>
+
+
+    </div>
+
+</section>
+
+<section id="works">
+    <h2>Works</h2>
+    <div class="work-grid">
+        <!-- 作品項目 -->
+        <div class="work-item">
+            <div class="image-placeholder">
+               <a href="https://taziri0000.github.io/portfolio-hobby/" target="_blank" ><img src="images/portfolio_02.jpg" alt="portforio-site01"></a>
+            </div>
+            <h3>ガンプラのBLOG</h3>
+            <p>自身の趣味であるガンプラのBLOGを趣味で立ち上げました。こちらに関しては、これから運用を考えているのでgithubで実際に公開している作品になります。<br>
+            こちらのサイトのイメージは宇宙の漆黒の黒とガンダムの基本色となる赤、青、白のトリコロールカラーを意識した色をアクセントカラーで使用して制作しました。画像をクリックするとサイトへ移動します。</p>
+        </div>
+
+        <div class="work-item">
+            <div class="image-placeholder">
+                <a href="etc1.html" target="_blank"><img src="images/site-02.jpg" alt="portfolio-site02"></a></div>
+            <h3>米作り農家のサイト</h3>
+            <p>ポートフォリオのために作った架空の米農家のサイト。イメージしたのは太陽の光り輝く空と夏を生き生きと成長した米の立派な葉の色をメインカラー白とアクセントカラーの緑色を使用し作成しました。制作時間は6時間くらいです。</p>
+        </div>
+        <div class="work-item">
+            <div class="image-placeholder">
+                <a href="etc3.html" target="_blank"><img src="images/site-03.jpg" alt="ortfolio-site03"></a>
+            </div>
+            <h3>行政書士事務所のサイト</h3>
+            <p>こちらもポートフォリオのために作った架空の行政書士事務所のサイトです。イメージしたのは信頼、正義ということで薄い黄色とネイビーを差し色に使って、基本のメインカラーは白にしました。制作時間は５時間程です。</p>
+        </div>
+    </div>
+</section>
+
+<section id="contact">
+    <h2>Contact</h2>
+    <p>お仕事のご相談やご質問は、以下のメールアドレスまでお気軽にご連絡ください。</p>
+    <p><strong>test-website@email.com</strong></p>
+</section>
+
+</body>
+</html>
