@@ -198,21 +198,20 @@
 
         }
 
-               @media screen and (max-width:780px) {
-        .a4-portrait {
-            width: 260px;
-            aspect-ratio: 210 / 297;
-        }
+        @media screen and (max-width:780px) {
+            .a4-portrait {
+                width: 260px;
+                aspect-ratio: 210 / 297;
+            }
 
-        /* A4横 */
-        .a4-landscape {
-            width: 380px;
-            aspect-ratio: 297 / 210;
-        }
+            /* A4横 */
+            .a4-landscape {
+                width: 380px;
+                aspect-ratio: 297 / 210;
+            }
 
 
         }
- 
     </style>
 </head>
 
@@ -278,8 +277,10 @@
                             src="images/site-02.jpg" alt="portfolio-site02"></a>
                 </div>
                 <h3>米作り農家のサイト</h3>
-                <p>ポートフォリオのために作った架空の米農家のサイト。イメージしたのは太陽の光り輝く空と夏を生き生きと成長した米の立派な葉の色をメインカラー白とアクセントカラーの緑色を使用し作成しました。制作時間は6時間くらいです。
+                <p>ポートフォリオのために作った架空の米農家のサイト。制作期間２日
                 </p>
+                <a href="rice-farmer-concept.html"
+                    style="display:inline-block; margin-top:10px; color:#007bff; text-decoration:underline;">設計意図とコンセプトを見る</a>
             </div>
             <div class="work-item">
                 <div class="image-placeholder">
@@ -287,8 +288,11 @@
                             src="images/site-03.jpg" alt="ortfolio-site03"></a>
                 </div>
                 <h3>行政書士事務所のサイト</h3>
-                <p>こちらもポートフォリオのために作った架空の行政書士事務所のサイトです。イメージしたのは信頼、正義ということで薄い黄色とネイビーを差し色に使って、基本のメインカラーは白にしました。制作時間は５時間程です。
+                <p>ポートフォリオのために作った架空の行政書士事務所のサイトです。制作時間は３日程です。
                 </p>
+                <!-- index_2.html の該当箇所に追加 -->
+                <a href="law-office-concept.html"
+                    style="display:block; margin-top:10px; color:#007bff; text-decoration:underline;">サイトの設計意図（コンセプト詳細）はこちら</a>
             </div>
         </div>
     </section>
@@ -309,7 +313,7 @@
                     <img src="images/port1.jpg" class="active">
                     <img src="images/port2.jpg">
                     <img src="images/port3.jpg">
-                     <img src="images/port4.jpg">
+                    <img src="images/port4.jpg">
 
 
                     <button class="prev">‹</button>
@@ -325,7 +329,7 @@
                     <img src="images/port02.jpg">
                     <img src="images/port03.jpg">
                     <img src="images/port05.jpg">
-                    
+
                     <button class="prev">‹</button>
                     <button class="next">›</button>
                 </div>
@@ -344,58 +348,58 @@
     </section>
 
     <script>
-function initSlideshow(block) {
-  const slider = block.querySelector(".slideshow");
-  const images = slider.querySelectorAll("img");
-  const prev = slider.querySelector(".prev");
-  const next = slider.querySelector(".next");
-  const autoBtn = block.querySelector(".auto-toggle");
+        function initSlideshow(block) {
+            const slider = block.querySelector(".slideshow");
+            const images = slider.querySelectorAll("img");
+            const prev = slider.querySelector(".prev");
+            const next = slider.querySelector(".next");
+            const autoBtn = block.querySelector(".auto-toggle");
 
-  let index = 0;
-  let timer = null;
-  let isAuto = false;
+            let index = 0;
+            let timer = null;
+            let isAuto = false;
 
-  function show(i) {
-    images.forEach(img => img.classList.remove("active"));
-    images[i].classList.add("active");
-  }
+            function show(i) {
+                images.forEach(img => img.classList.remove("active"));
+                images[i].classList.add("active");
+            }
 
-  function startAuto() {
-    timer = setInterval(() => {
-      index = (index + 1) % images.length;
-      show(index);
-    }, 3000);
+            function startAuto() {
+                timer = setInterval(() => {
+                    index = (index + 1) % images.length;
+                    show(index);
+                }, 3000);
 
-    isAuto = true;
-    autoBtn.textContent = "AUTO: ON";
-  }
+                isAuto = true;
+                autoBtn.textContent = "AUTO: ON";
+            }
 
-  function stopAuto() {
-    clearInterval(timer);
-    timer = null;
-    isAuto = false;
-    autoBtn.textContent = "AUTO: OFF";
-  }
+            function stopAuto() {
+                clearInterval(timer);
+                timer = null;
+                isAuto = false;
+                autoBtn.textContent = "AUTO: OFF";
+            }
 
-  prev.addEventListener("click", () => {
-    index = (index - 1 + images.length) % images.length;
-    show(index);
-  });
+            prev.addEventListener("click", () => {
+                index = (index - 1 + images.length) % images.length;
+                show(index);
+            });
 
-  next.addEventListener("click", () => {
-    index = (index + 1) % images.length;
-    show(index);
-  });
+            next.addEventListener("click", () => {
+                index = (index + 1) % images.length;
+                show(index);
+            });
 
-  autoBtn.addEventListener("click", () => {
-    isAuto ? stopAuto() : startAuto();
-  });
+            autoBtn.addEventListener("click", () => {
+                isAuto ? stopAuto() : startAuto();
+            });
 
-  show(index);
-}
+            show(index);
+        }
 
-document.querySelectorAll(".slideshow-block").forEach(initSlideshow);
-</script>
+        document.querySelectorAll(".slideshow-block").forEach(initSlideshow);
+    </script>
 </body>
 
 </html>
